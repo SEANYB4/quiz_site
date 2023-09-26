@@ -103,6 +103,7 @@ const submitScoreButton = document.getElementById('submit_score');
 const quizSelect = document.getElementById('quiz_select');
 const quizSelectors = quizSelect.querySelectorAll('.quiz_select_button');
 const nameInput = document.getElementById('name_input');
+const scoreboardDisplay = document.getElementById('score_display');
 
 
 
@@ -187,6 +188,8 @@ function showResults() {
     submitButton.style.display = 'none';
     restartButton.style.display = 'inline';
 
+    scoreboardDisplay.innerHTML = String(currentScore);
+
     
 }
 
@@ -228,9 +231,6 @@ submitScoreButton.addEventListener("click", (e) => {
 
     const name = nameInput.value;
     
-    console.log(name, currentScore);
-
-
     // Send the score to the server
     fetch('/scores', {
         method: 'POST',

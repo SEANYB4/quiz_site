@@ -93,10 +93,31 @@ nav {
 
 #scoreboard {
 
+
     background-color: beige;
     border-radius: 1rem;
     padding: 1rem;
     margin: 1rem;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#scoreboard ul {
+    background-color: aliceblue;
+    border-radius: 1rem;
+    margin: 1rem;
+    padding: 1rem;
+    width: 20rem;
+    height: 6rem;
+}
+
+#scoreboard li {
+    list-style: none;
+    background-color: blueviolet;
+}
+
+#submit_score {
+    margin: 1rem;
 }

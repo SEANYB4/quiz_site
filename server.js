@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 
 const app = express();
-const PORT = 5500;
+const PORT = process.env.PORT || 5500;
 
 
 // Configure body-parser middleware
@@ -23,7 +23,7 @@ let scores = [];
 // HandlePOST request to store a new score
 
 app.post('/scores', (req, res) => {
-    console.log(req.body)
+    
 
     const { name, score } = req.body;
     
@@ -37,7 +37,7 @@ app.post('/scores', (req, res) => {
 
 // Handle GET request to retrieve scores
 app.get('/scores', (req, res) => {
-    console.log('hello get');
+    
     res.json(scores);
 });
 
